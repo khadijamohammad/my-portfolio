@@ -11,6 +11,9 @@
         background: #f6f8fb;
         animation: fadeIn 0.8s ease-in;
         color: #222;
+
+        transition: background 0.4s ease, color 0.4s ease;
+
     }
 
     .navbar {
@@ -64,7 +67,8 @@
         max-width: 600px;
         border-radius: 15px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        transition: all 0.3s ease;
+        
+        transition: all 0.4s ease;
     }
 
     .card:hover {
@@ -152,6 +156,41 @@ transition: 0.3s;
 .project:hover {
 transform: translateY(-5px);
 }
+.dark-mode {
+
+background: #121212;
+
+color: white;
+
+}
+
+.dark-mode .card {
+
+background: #1e1e1e;
+
+color: white;
+
+}
+
+.dark-mode p {
+
+color: #d6d6d6;
+
+}
+
+.dark-mode .navbar {
+
+background: linear-gradient(90deg,#000,#222);
+
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+
+color: white;
+
+}
 
 footer {
 
@@ -180,14 +219,32 @@ margin: 0;
 
 .
 </head>
+<script>
+
+function toggleDarkMode() {
+
+document.body.classList.toggle("dark-mode");
+
+}
+
+</script>
 
 <body>
 
 <div class="navbar">
+
     <a href="#home">Home</a>
+
     <a href="#about">About</a>
+
     <a href="#projects">Projects</a>
+
     <a href="#contact">Contact</a>
+
+    <button onclick="toggleDarkMode()" class="btn">
+🌙 Dark Mode
+</button>
+
 </div>
 
 <!-- HOME -->
