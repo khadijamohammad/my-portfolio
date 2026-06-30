@@ -1,0 +1,4 @@
+Amazon|Personal Assistant|Today|Applied|||Medium
+Test Company|Data Entry|20 July 2026|Interview|||Medium
+OpenAI|Admin|today|applied|||Medium
+Google|Admin|Today|Interview|20 July|9:30|High

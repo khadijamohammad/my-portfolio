@@ -16,22 +16,44 @@ usb_unlocked = False  # Tracks if they successfully decrypted the USB
 computer_attempts = 3
 door_attempts = 2
 window_attempts = 1
+inventory = []
 
 # Main game loop
 while play_again == "yes":
-    choice = input("\nChoose where to look [door / computer / window / search room]: ").lower()
+    choice = input("Choose where to look [door / computer / window / search room / inventory / help]: ").lower()
 
-    # --- SEARCH ROOM PATH ---
-    if choice == "search room":
+    if choice == "inventory":
+        print("\n🎒 INVENTORY")
+        print("================")
+        if inventory:
+            for item in inventory:
+                print(item)
+        else:
+            print("Inventory empty.")
+
+    elif choice == "help":
+        print("\n🆘 COMMANDS")
+        print("================")
+        print("🚪 door")
+        print("💻 computer")
+        print("🪟 window")
+        print("🔍 search room")
+        print("🎒 inventory")
+        print("❓ help")
+        print("================")
+
+    elif choice == "search room":
         if not has_usb:
             print("\n🔍 You rummage through a desk drawer and find a USB drive!")
             print("⚠️ The USB is heavily encrypted. A red warning light flashes on it. You pocket it.")
             has_usb = True
+            inventory.append("💾 USB Drive")
         elif has_usb and not has_key_code:
             print("\n🔍 You continue searching the room...")
             print("📄 Hidden behind a server rack, you find a scrap of paper with a handwritten note:")
             print("   'Bypass key for drive encryption: CYBER2026'")
             has_key_code = True
+            inventory.append("📄 Bypass Key")
         else:
             print("\nYou already searched the room thoroughly. There's nothing else useful here.")
 
@@ -83,6 +105,8 @@ while play_again == "yes":
                         # Reset all variables for a new game
                         has_usb = False
                         has_key_code = False
+
+                        inventory = []
                         usb_unlocked = False
                         computer_attempts = 3
                         door_attempts = 2
