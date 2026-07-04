@@ -152,6 +152,11 @@ box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 
 transition: 0.3s;
 }
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 .project:hover {
 transform: translateY(-5px);
@@ -366,30 +371,32 @@ Currently building software and cybersecurity projects 🚀
 
 <h2>📂 Projects</h2>
 
-<div>
+<div class="projects-container">
+
+<div class="project">
 
 <h3>🧪 Escape The Lab 2</h3>
 
 <p>
-Interactive Python escape game with
-decision paths and puzzles.
+Interactive Python escape game featuring inventory systems, encrypted USB access,
+hidden clues, replay mode, multiple endings, and cybersecurity-inspired puzzles.
 </p>
+
+<a href="escape_the_lab.py" download>
+<button class="btn">Download Game</button>
+</a>
 
 </div>
 
-<div>
+
+<div class="project">
 
 <h3>📋 Job Application Tracker</h3>
 
 <p>
-Python application tracker with
-save/load, statistics, interview tracking,
-priority system and dashboard.
+Python application tracker with save/load, interview tracking,
+statistics, priority system and dashboard.
 </p>
-
-</div>
-
-</section>
 
 </div>
 
@@ -413,46 +420,29 @@ Built a task manager with add, view, delete and saved tasks using tasks.txt.
 Created Python tools to generate passwords and evaluate password strength.
 </p>
 
-<div class="card">
+</div>
 
-<h3>🔐 Secure Login System</h3>
+
+<div class="project">
+
+<h3>🔒 Secure Login System</h3>
 
 <p>
 Built a secure Python authentication system with hidden password input,
-attempt protection, timed lockout, security status, and login activity logging.
+attempt protection, timed lockout, security status and login logging.
 </p>
 
 <a href="login_system.py" download>
-<button class="btn">
-Download Code
-</button>
-</a>
-
-<div class="card">
-
-<h3>🧪 Escape The Lab 2</h3>
-
-<p>
-Interactive Python escape game featuring
-inventory systems, encrypted USB access,
-hidden clues, replay mode, multiple endings,
-and cybersecurity-inspired puzzles.
-</p>
-
-<a href="escape_lab_2.py" download>
-<button class="btn">
-Download Game
-</button>
+<button class="btn">Download Code</button>
 </a>
 
 </div>
+
 </div>
 
 </section>
-    </div>
 
-</div>
-</div>
+
 
 <!-- CONTACT -->
 <div class="section" id="contact">
