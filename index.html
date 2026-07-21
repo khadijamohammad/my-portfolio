@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Portfolio</title>
+
+    <style>
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f6f8fb;
+        animation: fadeIn 0.8s ease-in;
+        color: #222;
+
+        transition: background 0.4s ease, color 0.4s ease;
+
+    }
+
+    .navbar {
+        background: linear-gradient(90deg, #111, #333);
+        padding: 15px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+    }
+
+    .navbar a {
+        color: white;
+        margin: 15px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+        color: #00bcd4;
+    }
+
+    .section {
+        padding: 70px 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #555;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .card {
+        background: white;
+        margin: 20px auto;
+        padding: 25px;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        
+        transition: all 0.4s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+
+    img {
+        width: 220px;
+        border-radius: 15px;
+        margin-top: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    img:hover {
+        transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @media (max-width: 768px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar a {
+        display: inline-block;
+        margin: 8px;
+        font-size: 14px;
+    }
+
+    .card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    img {
+        width: 180px;
+    }
+
+    .section {
+        padding: 40px 10px;
+    }
+}
+#projects {
+padding: 40px;
+}
+
+.project {
+background: white;
+
+padding: 20px;
+
+margin-bottom: 20px;
+
+border-radius: 15px;
+
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+transition: 0.3s;
+}
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project:hover {
+transform: translateY(-5px);
+}
+
+.btn {
+
+background: #00bcd4;
+
+color: white;
+
+border: none;
+
+padding: 12px 22px;
+
+border-radius: 10px;
+
+cursor: pointer;
+
+font-size: 16px;
+
+transition: all 0.4s ease;
+
+}
+
+.btn:hover {
+
+transform: translateY(-3px);
+
+box-shadow:
+0 0 10px #00bcd4,
+0 0 20px #00bcd4,
+0 0 35px rgba(0,188,212,0.7);
+
+}
+
+.dark-mode {
+
+background: #121212;
+
+color: white;
+
+}
+
+.dark-mode .card {
+
+background: #1e1e1e;
+
+color: white;
+
+}
+
+.dark-mode p {
+
+color: #d6d6d6;
+
+}
+
+.dark-mode .navbar {
+
+background: linear-gradient(90deg,#000,#222);
+
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+
+color: white;
+
+}
+
+footer {
+
+background: #111;
+
+color: white;
+
+text-align: center;
+
+padding: 20px;
+
+margin-top: 50px;
+
+}
+
+
+footer p {
+
+color: white;
+
+margin: 0;
+
+}
+</style>
+
+
+.
+</head>
+<script>
+
+function toggleDarkMode() {
+
+document.body.classList.toggle("dark-mode");
+
+}
+
+</script>
+
+<body>
+
+<div class="navbar">
+
+    <a href="#home">Home</a>
+
+    <a href="#about">About</a>
+
+    <a href="#projects">Projects</a>
+
+    <a href="#contact">Contact</a>
+
+    <button onclick="toggleDarkMode()" class="btn">
+🌙 Dark Mode
+</button>
+
+</div>
+
+<!-- HOME -->
+   
+</div><div class="section" id="home">
+
+   <h1>👋 Hi, I'm Khadija Mohammad</h1>
+
+<h2 id="typing"></h2>
+
+<p>
+Building projects and developing skills in Python, HTML, CSS, and modern technology.
+</p>
+
+<<img src="/static/Wolfs.png" alt="Profile Image">>
+
+    <br><br>
+    <br><br>
+
+<a href="khadija-mohammad-cv.pdf" download>
+<button class="btn">Download My CV</button>
+</a>
+
+<a href="https://github.com/khadijamohammad"
+   target="_blank"
+   rel="noopener noreferrer">
+    <button class="btn">🐙 GitHub</button>
+</a>
+
+    <a href="#projects">
+        <button class="btn">View My Work</button>
+    </a>
+
+</div>
+
+<!-- ABOUT -->
+ <div class="section" id="about">
+
+    <div class="card">
+        <h2>About Me</h2>
+
+        <p>
+            I build Python applications, automation tools, interactive games,
+and modern web projects while continuously growing my software
+development and cybersecurity skills.
+
+Every project I build teaches me something new, and I'm always
+looking for the next challenge.
+
+
+"Every expert was once a beginner who refused to give up."
+
+
+        
+</p>
+
+        <p>
+            🏆 11+ Projects Built
+
+💻 Python • HTML • CSS • Git • GitHub (learning JavaScript)
+
+📍 Calgary, Canada 
+        </p>
+    </div>
+
+</div>
+<section class="section" id="skills">
+
+<h2>Skills</h2>
+
+<p>
+Python • HTML • CSS • Cybersecurity • Problem Solving • GitHub
+</p>
+<p>
+Currently building software and cybersecurity projects 🚀
+</p>
+
+</section>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+
+    <h2>My Projects</h2>
+
+<div class="card">
+<h3>Portfolio Website</h3>
+<p>Built a responsive portfolio website using HTML and CSS.</p>
+</div>
+
+<div class="card">
+<h3>Python Calculator</h3>
+<p>Created a calculator using Python and user input.</p>
+</div>
+
+<div class="card">
+<h3>Website Development Practice</h3>
+<p>Designed and improved responsive webpages.</p>
+
+</div>
+</section>
+
+<a href="todo.py" download>
+<button class="btn">Download Code</button>
+</a>
+
+<section id="projects">
+
+<h2>📂 Projects</h2>
+
+<div class="projects-container">
+
+<div class="project">
+
+<h3>🧪 Escape The Lab 2</h3>
+
+<p>
+Interactive Python escape game featuring inventory systems, encrypted USB access,
+hidden clues, replay mode, multiple endings, and cybersecurity-inspired puzzles.
+</p>
+
+<a href="escape_the_lab.py" download>
+<button class="btn">Download Game</button>
+</a>
+
+</div>
+
+
+<div class="project">
+
+<h3>📋 Job Application Tracker</h3>
+
+<p>
+Python application tracker with save/load, interview tracking,
+statistics, priority system and dashboard.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<h3>📝 Python To-Do App</h3>
+
+<p>
+Built a task manager with add, view, delete and saved tasks using tasks.txt.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<h3>🔐 Password Generator & Checker</h3>
+
+<p>
+Created Python tools to generate passwords and evaluate password strength.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<h3>🔒 Secure Login System</h3>
+
+<p>
+Built a secure Python authentication system with hidden password input,
+attempt protection, timed lockout, security status and login logging.
+</p>
+
+<a href="login_system.py" download>
+<button class="btn">Download Code</button>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+
+    <div class="card">
+        <h2>Contact Me</h2>
+
+        <p>Email: khadijamohammad64@outlook.com</p>
+        <p>GitHub: github.com/khadijamohammad-lab</p>
+        <p>Location: Calgary, Canada</p>
+    </div>
+
+</div>
+    </div>
+
+</div>
+<footer>
+
+<p>
+Built by Khadija Mohammad © 2026
+</p>
+
+</footer>
+
+
+<script>
+
+const text =
+"Python Developer | Future Cybersecurity Professional";
+
+let i = 0;
+
+function typeEffect() {
+
+if (i < text.length) {
+
+document.getElementById("typing").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typeEffect, 60);
+
+}
+
+}
+
+typeEffect();
+
+</script>
+
+</body>
+</html>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
