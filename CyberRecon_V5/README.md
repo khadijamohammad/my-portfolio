@@ -12,7 +12,7 @@ CyberRecon Enterprise is a high-performance Python security platform designed fo
 
 ---
 
-![Terminal Output](assets/screenshot_786.png)
+![Terminal Output](assets/screenshot786.png)
 
 ## ✨ Key Features
 
