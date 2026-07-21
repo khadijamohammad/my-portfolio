@@ -4,6 +4,14 @@
 ![Python Version](https://img.shields.io/badge/python-3.11%2B-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+## 💡 Why I Built This
+
+Traditional network reconnaissance tools can be slow, resource-heavy, or difficult to integrate into modern automated pipelines. **NetSentinel** was developed as an asynchronous, high-performance network vulnerability assessment scanner designed to accelerate local surface discovery while producing structured, actionable security reports.
+
+I built NetSentinel to explore high-concurrency network scanning techniques and dynamic threat correlation. By leveraging non-blocking execution models, the tool efficiently interrogates network endpoints, correlates open services against vulnerability databases, and highlights potential security gaps without requiring heavy enterprise overhead.
+
+This project showcases expertise in **asynchronous network programming (`asyncio` & sockets)**, **threat intelligence integration (CVE/IOC correlation)**, **automated reporting engines**, and **CI/CD integration using GitHub Actions**.
+
 **NetSentinel** is an asynchronous Python-based network security utility designed for fast service reconnaissance, banner grabbing, vulnerability correlation, and automated security report generation.
 
 ---
