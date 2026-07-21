@@ -1,0 +1,27 @@
+{
+    "metadata": {
+        "scanner": "NetSentinel Vulnerability Engine",
+        "version": "1.0.0",
+        "target": "127.0.0.1",
+        "timestamp": "2026-07-20T17:10:50.257678",
+        "total_open_ports": 2,
+        "total_vulnerabilities_found": 1
+    },
+    "open_ports": [
+        {
+            "port": 135,
+            "service": "MSRPC"
+        },
+        {
+            "port": 445,
+            "service": "SMB"
+        }
+    ],
+    "vulnerabilities": [
+        {
+            "cve_id": "CVE-2017-0144",
+            "severity": "CRITICAL",
+            "title": "EternalBlue Risk"
+        }
+    ]
+}

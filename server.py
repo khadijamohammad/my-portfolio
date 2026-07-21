@@ -1,0 +1,129 @@
+import os
+import signal
+import json
+import logging
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse, FileResponse
+
+app = FastAPI()
+
+# ==========================================
+# 🌐 0. HOME ROUTE (SERVES DASHBOARD UI)
+# ==========================================
+@app.get("/")
+async def get_dashboard():
+    # Print current working directory to terminal for debugging
+    current_dir = os.getcwd()
+    print(f"[*] Server looking for dashboard/index.html from directory: {current_dir}")
+    return FileResponse(os.path.join("dashboard", "index.html"))
+
+    # Check common potential locations
+    possible_paths = [
+        os.path.join(current_dir, "dashboard", "index.html"),
+        os.path.join(current_dir, "index.html"),
+        os.path.join(current_dir, "dashboard.html")
+    ]
+
+    for path in possible_paths:
+        if os.path.exists(path):
+            print(f"[+] Found HTML file at: {path}")
+            with open(path, "r", encoding="utf-8") as f:
+                return HTMLResponse(content=f.read())
+
+    return HTMLResponse(
+        content=f"<h3>Error: Could not locate index.html.</h3><p>Server running in: {current_dir}</p>",
+        status_code=404
+    )
+
+
+# ==========================================
+# 🛡️ 1. ENTERPRISE TELEMETRY NOISE FILTER
+# ==========================================
+NOISE_IGNORE_LIST = {
+    "chrome.exe", "msedge.exe", "msedgewebview2.exe", "brave.exe", "firefox.exe",
+    "dllhost.exe", "audiodg.exe", "searchfilterhost.exe", "searchprotocolhost.exe",
+    "backgroundtaskhost.exe", "taskhostw.exe", "runtimebroker.exe", "siihost.exe"
+}
+
+def should_process_telemetry(event_data: dict) -> bool:
+    """Returns False if process is known ambient noise, True if telemetry should be processed."""
+    if not event_data or "process_name" not in event_data:
+        return False
+    process_name = event_data["process_name"].lower()
+    if process_name in NOISE_IGNORE_LIST:
+        return False
+    return True
+
+
+# ==========================================
+# 🔌 2. WEBSOCKET CONNECTION MANAGER
+# ==========================================
+class ConnectionManager:
+    def __init__(self):
+        self.active_connections: list[WebSocket] = []
+
+    async def connect(self, websocket: WebSocket):
+        await websocket.accept()
+        self.active_connections.append(websocket)
+
+    def disconnect(self, websocket: WebSocket):
+        if websocket in self.active_connections:
+            self.active_connections.remove(websocket)
+
+    async def broadcast(self, message: str):
+        for connection in self.active_connections:
+            await connection.send_text(message)
+
+manager = ConnectionManager()
+
+
+# ==========================================
+# ⚡ 3. SOAR MITIGATION UTILITY
+# ==========================================
+def neutralize_threat(pid: int, process_name: str):
+    """Active SOAR mitigation: Terminates a critical threat vector process."""
+    if not pid:
+        print("[-] SOAR STATUS: Invalid PID received. Skipping termination.")
+        return
+        
+    try:
+        print(f"[!] SOAR ACTION: Critical anomaly detected in {process_name} (PID: {pid})")
+        os.kill(pid, signal.SIGTERM)
+        print(f"[+] SOAR STATUS: Process {pid} neutralized successfully.")
+    except Exception as e:
+        print(f"[-] SOAR STATUS: Containment failed or process already dead: {e}")
+
+
+# ==========================================
+# 🎯 4. MAIN WEBSOCKET ROUTE
+# ==========================================
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await manager.connect(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            event = json.loads(data)
+            
+            if event.get("event_type") == "PROCESS_SPAWNED":
+                payload = event.get("data", {})
+                
+                # 🛡️ Step A: Run Noise Filter
+                if not should_process_telemetry(payload):
+                    continue  # Ignore background noise binaries
+                
+                # 🎯 Step B: Check for SOAR Trigger
+                if payload.get("process_name") == "powershell.exe":
+                    target_pid = payload.get("ppid")
+                    neutralize_threat(target_pid, payload.get("parent_name", "Unknown Parent"))
+            
+            # 📊 Step C: Broadcast clean telemetry to UI
+            await manager.broadcast(data)
+            
+    except WebSocketDisconnect:
+        manager.disconnect(websocket)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("server:app", host="127.0.0.1", port=8000, reload=True)

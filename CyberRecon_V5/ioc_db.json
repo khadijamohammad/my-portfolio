@@ -1,0 +1,18 @@
+{
+  "malicious_hashes": {
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855": "Simulated WebShell Component",
+    "4a2c16d53b92e8648e3a2c5a242bb9c500000000000000000000000000000000": "Mimikatz LSASS Dumper Variant"
+  },
+  "suspicious_filenames": [
+    "nc.exe",
+    "mimikatz.exe",
+    "whoami.txt",
+    "passwords.txt",
+    "exploit.ps1"
+  ],
+  "suspicious_extensions": [
+    ".vbs",
+    ".bat",
+    ".exe"
+  ]
+}

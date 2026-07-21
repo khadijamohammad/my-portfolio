@@ -1,0 +1,10 @@
+{
+    "id": "CR-002",
+    "title": "Web Browser Spawned Shell Execution",
+    "mitre": "T1059.001",
+    "severity": "HIGH",
+    "conditions": {
+        "parent_name": "chrome",
+        "process_name": "cmd"
+    }
+}

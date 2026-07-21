@@ -1,0 +1,17 @@
+{
+  "id": "CR-014",
+  "title": "Encoded PowerShell Execution",
+  "author": "Khadija Mohammad",
+  "version": "1.2",
+  "created": "2026-07-19",
+  "modified": "2026-07-19",
+  "mitre": ["T1059.001"],
+  "severity": "HIGH",
+  "confidence": 92,
+  "enabled": true,
+  "conditions": {
+    "parent_name": "cmd",
+    "process_name": "powershell",
+    "commandline_contains": "-enc"
+  }
+}

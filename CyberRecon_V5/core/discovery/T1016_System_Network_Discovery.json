@@ -1,0 +1,10 @@
+{
+    "id": "CR-001",
+    "title": "Command Shell Discovery Activity via Ping",
+    "mitre": "T1016",
+    "severity": "MEDIUM",
+    "conditions": {
+        "parent_name": "cmd",
+        "process_name": "ping"
+    }
+}

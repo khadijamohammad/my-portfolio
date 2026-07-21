@@ -1,0 +1,71 @@
+[
+    {
+        "timestamp": "2026-07-17 08:19:28",
+        "analyst": "khadija",
+        "score": 55,
+        "threat": "\ud83d\udd34 HIGH",
+        "findings": [
+            "Firewall profiles are disabled: Domain, Private, Public"
+        ]
+    },
+    {
+        "timestamp": "2026-07-17 08:24:09",
+        "analyst": "khadija",
+        "score": 55,
+        "threat": "\ud83d\udd34 HIGH",
+        "findings": [
+            "Firewall profiles are disabled: Domain, Private, Public"
+        ]
+    },
+    {
+        "timestamp": "2026-07-17 10:11:43",
+        "analyst": [
+            "khadija",
+            "Lead Security Engineer"
+        ],
+        "score": 55,
+        "threat": "\ud83d\udd34 HIGH",
+        "findings": [
+            "Firewall profiles are disabled: Domain, Private, Public"
+        ]
+    },
+    {
+        "timestamp": "2026-07-17 10:13:25",
+        "analyst": [
+            "khadija",
+            "Lead Security Engineer"
+        ],
+        "score": 55,
+        "threat": "\ud83d\udd34 HIGH",
+        "findings": [
+            "Firewall profiles are disabled: Domain, Private, Public"
+        ]
+    },
+    {
+        "timestamp": "2026-07-17 10:19:20",
+        "analyst": "khadija",
+        "score": 55,
+        "threat": "\ud83d\udd34 HIGH",
+        "findings": [
+            "Firewall profiles are disabled: Domain, Private, Public"
+        ]
+    },
+    {
+        "timestamp": "2026-07-17 10:24:40",
+        "analyst": "khadija",
+        "score": 55,
+        "threat": "\ud83d\udd34 HIGH",
+        "findings": [
+            "Firewall profiles are disabled: Domain, Private, Public"
+        ]
+    },
+    {
+        "timestamp": "2026-07-17 10:31:14",
+        "analyst": "khadija",
+        "score": 55,
+        "threat": "\ud83d\udd34 HIGH",
+        "findings": [
+            "Firewall profiles are disabled: Domain, Private, Public"
+        ]
+    }
+]

@@ -1,0 +1,35 @@
+=================================
+
+   CYBER RECON SCANNER REPORT    
+
+=================================
+
+Analyst Name: Khadija
+
+Password
+🚨 Breached
+
+Firewall
+⚠ Disabled
+
+Antivirus
+✔ Running
+
+USB Devices
+✔ Safe
+
+Ports
+✔ Safe
+
+Updates
+⚠ Missing Updates
+
+---------------------------------
+
+FINAL SCORE
+40 / 100
+
+Threat Level
+🔴 HIGH
+
+=================================

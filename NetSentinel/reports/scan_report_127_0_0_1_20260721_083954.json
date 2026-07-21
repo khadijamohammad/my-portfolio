@@ -1,0 +1,40 @@
+{
+    "metadata": {
+        "scanner": "NetSentinel Vulnerability Engine",
+        "version": "1.0.0",
+        "target": "127.0.0.1",
+        "timestamp": "2026-07-21T08:39:54.142214",
+        "total_open_ports": 2,
+        "total_vulnerabilities_found": 2
+    },
+    "open_ports": [
+        {
+            "port": 135,
+            "service": "MSRPC (Microsoft RPC)",
+            "banner_details": "Standard Service"
+        },
+        {
+            "port": 445,
+            "service": "MICROSOFT-DS (SMB)",
+            "banner_details": "Standard Service"
+        }
+    ],
+    "vulnerabilities": [
+        {
+            "cve_id": "MISCONFIG-135",
+            "title": "Exposed Microsoft RPC Endpoint Mapper",
+            "severity": "MEDIUM",
+            "description": "MSRPC (Port 135) is visible to network probes. Allows remote attackers to enumerate DCOM interface bindings.",
+            "remediation": "Restrict Port 135 via Windows Firewall to trusted administrative IP subnets.",
+            "matched_port": 135
+        },
+        {
+            "cve_id": "SEC-CONFIG-445",
+            "title": "Exposed SMB Service (SMBv1 Disabled)",
+            "severity": "INFO",
+            "description": "Port 445 is open for SMBv2/v3, but target correctly rejected SMBv1 negotiations.",
+            "remediation": "Ensure SMB signing is required and restrict access via firewall.",
+            "matched_port": 445
+        }
+    ]
+}

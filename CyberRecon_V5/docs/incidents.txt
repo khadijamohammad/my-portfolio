@@ -1,0 +1,2 @@
+Incident ID: CR-20260717-1514 | Date: 2026-07-17 11:46:14 | Severity: LOW | Score: 35 | Analyst: khadija | Findings: [PowerShell Active, Startup Persistence Found] | Resolved: Yes (by khadija on 2026-07-17 11:54:56)
+
