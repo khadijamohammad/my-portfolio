@@ -12,6 +12,8 @@ CyberRecon Enterprise is a high-performance Python security platform designed fo
 
 ---
 
+![Terminal Output](assets/Screenshot_786.png)
+
 ## ✨ Key Features
 
 * **✔ Real-Time Process Monitoring:** Tracks active PIDs, parent-child relationships, and suspicious process executions.

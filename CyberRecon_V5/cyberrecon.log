@@ -1,0 +1,6 @@
+2026-07-21 13:57:58,153 [INFO] CyberRecon scanner initialized successfully.
+2026-07-21 13:57:58,153 [WARNING] Suspicious process spawn detected: PID 4120 (powershell.exe)
+2026-07-21 13:57:58,153 [ERROR] Failed to parse rule file: config/rules.json
+2026-07-21 14:27:53,907 [INFO] CyberRecon scanner initialized successfully.
+2026-07-21 14:27:53,908 [WARNING] Suspicious process spawn detected: PID 4120 (powershell.exe)
+2026-07-21 14:27:53,908 [ERROR] Failed to parse rule file: config/rules.json

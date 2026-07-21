@@ -1,0 +1,11 @@
+[
+    {
+        "timestamp": "2026-07-21 14:38:32",
+        "analyst": "khadija",
+        "score": 55,
+        "threat": "\ud83d\udd34 HIGH",
+        "findings": [
+            "Firewall profiles are disabled: Domain, Private, Public"
+        ]
+    }
+]

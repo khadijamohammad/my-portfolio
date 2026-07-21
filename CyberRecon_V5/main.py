@@ -1,10 +1,12 @@
 import sys
-import time
 import os
+import time
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import platform
 from CyberRecon_V5.core.utils import Colors, show_progress
-from authentication import AuthenticationSystem
-from reports import ReportGenerator
+from CyberRecon_V5.authentication import AuthenticationSystem
+from CyberRecon_V5.reports import ReportGenerator
 
 # Import our custom object-oriented scanner modules
 from CyberRecon_V5.core.windows_security import WindowsSecurityScanner
@@ -15,7 +17,7 @@ from CyberRecon_V5.core.hardware import HardwareScanner
 # Import our threat intelligence engine
 from CyberRecon_V5.core.threat_intel import ThreatIntelEngine
 from CyberRecon_V5.core.incident_engine import IncidentCorrelationEngine
-from edr_monitor import EDRMonitor
+from CyberRecon_V5.edr_monitor import EDRMonitor
 
 def clear_screen():
     """Cleans up terminal view depending on Operating System."""
