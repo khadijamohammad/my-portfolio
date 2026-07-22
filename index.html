@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khadija Mohammad | Portfolio</title>
 
     <style>
     body {
@@ -11,9 +13,7 @@
         background: #f6f8fb;
         animation: fadeIn 0.8s ease-in;
         color: #222;
-
         transition: background 0.4s ease, color 0.4s ease;
-
     }
 
     .navbar {
@@ -22,6 +22,7 @@
         text-align: center;
         position: sticky;
         top: 0;
+        z-index: 1000;
     }
 
     .navbar a {
@@ -55,8 +56,8 @@
     p {
         font-size: 18px;
         color: #555;
-        max-width: 600px;
-        margin: 0 auto;
+        max-width: 700px;
+        margin: 0 auto 15px auto;
     }
 
     .card {
@@ -64,11 +65,11 @@
         margin: 20px auto;
         padding: 25px;
         width: 80%;
-        max-width: 600px;
+        max-width: 700px;
         border-radius: 15px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        
         transition: all 0.4s ease;
+        text-align: left;
     }
 
     .card:hover {
@@ -76,14 +77,30 @@
         box-shadow: 0 12px 25px rgba(0,0,0,0.12);
     }
 
-    img {
+    .card h3 {
+        margin-top: 0;
+        color: #111;
+    }
+
+    .tag {
+        display: inline-block;
+        background: #e0f7fa;
+        color: #007c91;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 4px 2px;
+    }
+
+    img.profile-img {
         width: 220px;
         border-radius: 15px;
         margin-top: 20px;
         transition: transform 0.3s ease;
     }
 
-    img:hover {
+    img.profile-img:hover {
         transform: scale(1.05);
     }
 
@@ -97,425 +114,218 @@
             transform: translateY(0);
         }
     }
-    @media (max-width: 768px) {
 
-    h1 {
-        font-size: 28px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    p {
+    .btn {
+        background: #00bcd4;
+        color: white;
+        border: none;
+        padding: 12px 22px;
+        border-radius: 10px;
+        cursor: pointer;
         font-size: 16px;
-        padding: 0 10px;
-    }
-
-    .navbar {
-        padding: 10px;
-    }
-
-    .navbar a {
+        transition: all 0.4s ease;
+        text-decoration: none;
         display: inline-block;
-        margin: 8px;
-        font-size: 14px;
+        margin: 5px;
     }
 
-    .card {
-        width: 90%;
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 35px rgba(0,188,212,0.7);
+    }
+
+    .btn-secondary {
+        background: #333;
+    }
+
+    .btn-secondary:hover {
+        box-shadow: 0 0 10px #333;
+    }
+
+    .dark-mode {
+        background: #121212;
+        color: white;
+    }
+
+    .dark-mode .card {
+        background: #1e1e1e;
+        color: white;
+    }
+
+    .dark-mode .card h3 {
+        color: #00bcd4;
+    }
+
+    .dark-mode p {
+        color: #d6d6d6;
+    }
+
+    .dark-mode .navbar {
+        background: linear-gradient(90deg,#000,#222);
+    }
+
+    .dark-mode h1, .dark-mode h2, .dark-mode h3 {
+        color: white;
+    }
+
+    .dark-mode .tag {
+        background: #004d40;
+        color: #80cbd3;
+    }
+
+    footer {
+        background: #111;
+        color: white;
+        text-align: center;
         padding: 20px;
+        margin-top: 50px;
     }
 
-    img {
-        width: 180px;
+    footer p {
+        color: white;
+        margin: 0;
     }
 
-    .section {
-        padding: 40px 10px;
+    @media (max-width: 768px) {
+        h1 { font-size: 28px; }
+        h2 { font-size: 22px; }
+        p { font-size: 16px; padding: 0 10px; }
+        .navbar { padding: 10px; }
+        .navbar a { display: inline-block; margin: 8px; font-size: 14px; }
+        .card { width: 90%; padding: 20px; }
+        img.profile-img { width: 180px; }
+        .section { padding: 40px 10px; }
     }
-}
-#projects {
-padding: 40px;
-}
-
-.project {
-background: white;
-
-padding: 20px;
-
-margin-bottom: 20px;
-
-border-radius: 15px;
-
-box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-
-transition: 0.3s;
-}
-.projects-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.project:hover {
-transform: translateY(-5px);
-}
-
-.btn {
-
-background: #00bcd4;
-
-color: white;
-
-border: none;
-
-padding: 12px 22px;
-
-border-radius: 10px;
-
-cursor: pointer;
-
-font-size: 16px;
-
-transition: all 0.4s ease;
-
-}
-
-.btn:hover {
-
-transform: translateY(-3px);
-
-box-shadow:
-0 0 10px #00bcd4,
-0 0 20px #00bcd4,
-0 0 35px rgba(0,188,212,0.7);
-
-}
-
-.dark-mode {
-
-background: #121212;
-
-color: white;
-
-}
-
-.dark-mode .card {
-
-background: #1e1e1e;
-
-color: white;
-
-}
-
-.dark-mode p {
-
-color: #d6d6d6;
-
-}
-
-.dark-mode .navbar {
-
-background: linear-gradient(90deg,#000,#222);
-
-}
-
-.dark-mode h1,
-.dark-mode h2,
-.dark-mode h3 {
-
-color: white;
-
-}
-
-footer {
-
-background: #111;
-
-color: white;
-
-text-align: center;
-
-padding: 20px;
-
-margin-top: 50px;
-
-}
-
-
-footer p {
-
-color: white;
-
-margin: 0;
-
-}
-</style>
-
-
-.
+    </style>
 </head>
-<script>
-
-function toggleDarkMode() {
-
-document.body.classList.toggle("dark-mode");
-
-}
-
-</script>
 
 <body>
 
 <div class="navbar">
-
     <a href="#home">Home</a>
-
     <a href="#about">About</a>
-
-    <a href="#projects">Projects</a>
-
+    <a href="#flagships">Flagships</a>
     <a href="#contact">Contact</a>
-
-    <button onclick="toggleDarkMode()" class="btn">
-🌙 Dark Mode
-</button>
-
+    <button onclick="toggleDarkMode()" class="btn" style="padding: 6px 12px; font-size: 14px;">🌙 Dark Mode</button>
 </div>
 
 <!-- HOME -->
-   
-</div><div class="section" id="home">
+<div class="section" id="home">
+    <h1>👋 Hi, I'm Khadija Mohammad</h1>
+    <h2 id="typing" style="color: #00bcd4; min-height: 35px;"></h2>
+    <p>
+        Software Developer & Security Engineer specializing in Python, asynchronous networking, and security automation.
+    </p>
 
-   <h1>👋 Hi, I'm Khadija Mohammad</h1>
-
-<h2 id="typing"></h2>
-
-<p>
-Building projects and developing skills in Python, HTML, CSS, and modern technology.
-</p>
-
-
+    <img src="static/Wolfs.png" alt="Profile Image" class="profile-img">
 
     <br><br>
-    <br><br>
 
-<a href="khadija-mohammad-cv.pdf" download>
-<button class="btn">Download My CV</button>
-</a>
-
-<a href="https://github.com/khadijamohammad"
-   target="_blank"
-   rel="noopener noreferrer">
-    <button class="btn">🐙 GitHub</button>
-</a>
-
-    <a href="#projects">
-        <button class="btn">View My Work</button>
+    <a href="https://github.com/khadijamohammad" target="_blank" rel="noopener noreferrer" class="btn">
+        🐙 GitHub
     </a>
-
+    <a href="https://linkedin.com/in/khadija-mohammad" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        💼 LinkedIn
+    </a>
+    <a href="#flagships" class="btn">
+        🚀 View Flagship Projects
+    </a>
 </div>
 
 <!-- ABOUT -->
- <div class="section" id="about">
-
-    <div class="card">
+<div class="section" id="about">
+    <div class="card" style="text-align: center;">
         <h2>About Me</h2>
-
         <p>
-            I build Python applications, automation tools, interactive games,
-and modern web projects while continuously growing my software
-development and cybersecurity skills.
-
-Every project I build teaches me something new, and I'm always
-looking for the next challenge.
-
-
-"Every expert was once a beginner who refused to give up."
-
-
-        
-</p>
-
+            I design high-performance Python applications, security tools, and real-time streaming systems. 
+            My focus centers on asynchronous networking (`asyncio`), system security instrumentation, and clean software architecture.
+        </p>
         <p>
-            🏆 11+ Projects Built
-
-💻 Python • HTML • CSS • Git • GitHub (learning JavaScript)
-
-📍 Calgary, Canada 
+            💻 <b>Tech Stack:</b> Python • FastAPI • WebSockets • asyncio • Sockets • Pytest • HTML/CSS • Git/GitHub
+        </p>
+        <p>
+            📍 Calgary, Canada
         </p>
     </div>
-
-</div>
-<section class="section" id="skills">
-
-<h2>Skills</h2>
-
-<p>
-Python • HTML • CSS • Cybersecurity • Problem Solving • GitHub
-</p>
-<p>
-Currently building software and cybersecurity projects 🚀
-</p>
-
-</section>
-
-<!-- PROJECTS -->
-<div class="section" id="projects">
-
-    <h2>My Projects</h2>
-
-<div class="card">
-<h3>Portfolio Website</h3>
-<p>Built a responsive portfolio website using HTML and CSS.</p>
 </div>
 
-<div class="card">
-<h3>Python Calculator</h3>
-<p>Created a calculator using Python and user input.</p>
+<!-- FLAGSHIP PROJECTS -->
+<div class="section" id="flagships">
+    <h2>🛡️ Flagship Projects</h2>
+
+    <div class="card">
+        <h3>🛡️ CyberRecon Enterprise</h3>
+        <p>
+            An Enterprise Endpoint Detection & Response (EDR) telemetry framework featuring real-time process monitoring, automated threat detection mapped to the MITRE ATT&CK matrix, and live telemetry streaming via FastAPI WebSockets.
+        </p>
+        <div>
+            <span class="tag">Python 3.14</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">WebSockets</span>
+            <span class="tag">MITRE ATT&CK</span>
+            <span class="tag">SOAR Engine</span>
+            <span class="tag">pytest</span>
+        </div>
+        <br>
+        <a href="https://github.com/khadijamohammad/my-portfolio/tree/master/CyberRecon_V5" target="_blank" class="btn">
+            View Repository
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>🌐 NetSentinel</h3>
+        <p>
+            An asynchronous network security scanner built with Python's native <code>asyncio</code> and socket interface. Features multi-port concurrent scanning with custom semaphore rate limiting, dynamic banner grabbing, and a real-time CVE vulnerability correlation engine.
+        </p>
+        <div>
+            <span class="tag">Python 3.14</span>
+            <span class="tag">asyncio</span>
+            <span class="tag">Socket Programming</span>
+            <span class="tag">CVE Correlation</span>
+            <span class="tag">pytest</span>
+        </div>
+        <br>
+        <a href="https://github.com/khadijamohammad/my-portfolio/tree/master/NetSentinel" target="_blank" class="btn">
+            View Repository
+        </a>
+    </div>
 </div>
-
-<div class="card">
-<h3>Website Development Practice</h3>
-<p>Designed and improved responsive webpages.</p>
-
-</div>
-</section>
-
-<a href="todo.py" download>
-<button class="btn">Download Code</button>
-</a>
-
-<section id="projects">
-
-<h2>📂 Projects</h2>
-
-<div class="projects-container">
-
-<div class="project">
-
-<h3>🧪 Escape The Lab 2</h3>
-
-<p>
-Interactive Python escape game featuring inventory systems, encrypted USB access,
-hidden clues, replay mode, multiple endings, and cybersecurity-inspired puzzles.
-</p>
-
-<a href="escape_the_lab.py" download>
-<button class="btn">Download Game</button>
-</a>
-
-</div>
-
-
-<div class="project">
-
-<h3>📋 Job Application Tracker</h3>
-
-<p>
-Python application tracker with save/load, interview tracking,
-statistics, priority system and dashboard.
-</p>
-
-</div>
-
-
-<div class="project">
-
-<h3>📝 Python To-Do App</h3>
-
-<p>
-Built a task manager with add, view, delete and saved tasks using tasks.txt.
-</p>
-
-</div>
-
-
-<div class="project">
-
-<h3>🔐 Password Generator & Checker</h3>
-
-<p>
-Created Python tools to generate passwords and evaluate password strength.
-</p>
-
-</div>
-
-
-<div class="project">
-
-<h3>🔒 Secure Login System</h3>
-
-<p>
-Built a secure Python authentication system with hidden password input,
-attempt protection, timed lockout, security status and login logging.
-</p>
-
-<a href="login_system.py" download>
-<button class="btn">Download Code</button>
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
 
 <!-- CONTACT -->
 <div class="section" id="contact">
-
-    <div class="card">
+    <div class="card" style="text-align: center;">
         <h2>Contact Me</h2>
-
-        <p>Email: khadijamohammad64@outlook.com</p>
-        <p>GitHub: github.com/khadijamohammad-lab</p>
-        <p>Location: Calgary, Canada</p>
+        <p>📧 Email: khadijamohammad64@outlook.com</p>
+        <p>🐙 GitHub: github.com/khadijamohammad</p>
+        <p>📍 Location: Calgary, Canada</p>
     </div>
-
 </div>
-    </div>
 
-</div>
 <footer>
-
-<p>
-Built by Khadija Mohammad © 2026
-</p>
-
+    <p>Built by Khadija Mohammad © 2026</p>
 </footer>
 
-
 <script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
 
-const text =
-"Python Developer | Future Cybersecurity Professional";
-
+const text = "Python Developer | Cybersecurity & Software Engineer";
 let i = 0;
 
 function typeEffect() {
-
-if (i < text.length) {
-
-document.getElementById("typing").innerHTML += text.charAt(i);
-
-i++;
-
-setTimeout(typeEffect, 60);
-
-}
-
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 60);
+    }
 }
 
 typeEffect();
-
 </script>
 
 </body>
 </html>
-
    
 
 
